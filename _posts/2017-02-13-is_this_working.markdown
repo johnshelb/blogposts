@@ -24,8 +24,11 @@ What *is* this? I wondered.  Some further googling, revealed that this was the o
  
 This handy operator turns the above smelly code into the sleek beast presented here:
 
-hash[key] ||= []
-hash[key] << new_element
+```
+
+hash[key] ||= []```
+
+```hash[key] << new_element```
 
 From five lines of code down to two!
 
