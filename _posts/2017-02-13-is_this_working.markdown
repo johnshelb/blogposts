@@ -5,7 +5,8 @@ date:   2017-02-12 19:13:17 -0500
 ---
 
 In working through the prework labs in preparation for starting my coursework in web development at The Flatiron School, 
-I often found myself stymied by the NoMethod on Nil Class error.  
+I often found myself stymied by the `NoMethodError: undefined method `<<' for nil:NilClass`
+.  
  
 For example, I would be building a hash and would want to add an element to an array which was the value for a particular key.  The problem was, that if this was the first element being added, the array did not yet exist!  So I was trying to shovel a value into a non-existent array.  Naturally, this would result in my maching telling me that there was no shovel method for a non-existent array.
  
