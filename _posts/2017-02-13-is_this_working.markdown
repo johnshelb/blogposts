@@ -26,9 +26,12 @@ This handy operator turns the above smelly code into the sleek beast presented h
 
 ```
 
-hash[key] ||= []```
+hash[key] ||= []
+```
 
-```hash[key] << new_element```
+```
+hash[key] << new_element
+```
 
 From five lines of code down to two!
 
