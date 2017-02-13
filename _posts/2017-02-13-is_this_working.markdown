@@ -48,6 +48,7 @@ This has been useful many times since then and has saved me countless hours.
 
 Please realize that this is not only useful for hashes. The ||= operator can be used on almost anything!  You can use it to maintain a variable that already exists OR to assign that variable if it hasn't been previously assigned, e.g.:
 
+
 ```
 a ||=3
 ```
