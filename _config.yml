@@ -1,0 +1,21 @@
+# Site settings
+title: Bootcamp Reflections
+header-img: img/home-bg.png
+email: johnshelby@yahoo.com
+copyright_name: johnshelb
+description: > # this means to ignore newlines until "baseurl:"
+  Things I'm learning and thinking about while learning to code
+baseurl: "" # the subpath of your site, e.g. /blog
+twitter_username: 
+github_username:  johnshelb
+learn_profile: johnshelb
+email_username: johnshelby@yahoo.com
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+
+gems: [jekyll-paginate, jekyll-feed]
