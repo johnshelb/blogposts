@@ -11,11 +11,13 @@ For example, I would be building a hash and would want to add an element to an a
  
 In order to fix my code, I would laboriously add in conditional statements:
 
+```
 If hash[key]
     hash[key]<<new_element
 else 
     hash[key]=[new_element]
 end
+```
 
 Pretty code-smelly, right? But, hey, the tests passed, the light turned green, and I was a happy coder.
 
