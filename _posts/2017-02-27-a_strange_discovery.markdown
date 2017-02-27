@@ -11,7 +11,7 @@ Here is a simplified view of the class, stripped down for purposes of this illus
 
 ```
 class Products
-  attr_accessor :item
+  attr_accessor :item, :price
  
   @@products=[]
 	 
