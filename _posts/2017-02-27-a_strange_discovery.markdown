@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "A strange discovery"
-date:   2017-02-27 01:04:33 +0000
+date:   2017-02-26 20:04:34 -0500
 ---
 
 I was working on a lab, coding an app for simulated e-commerce site.  As I was googling around trying to solve some problem that was vexing me, I saw something that really confused me.
@@ -9,6 +9,7 @@ I was working on a lab, coding an app for simulated e-commerce site.  As I was g
 There was a class variable that was assigned to an array keeping track of all the products that the store had for sale.
 Here is a simplified view of the class, stripped down for purposes of this illustration:
 
+```
 class Products
   attr_accessor :item
  
@@ -25,11 +26,12 @@ class Products
    end
 
 end
+```
 
 The goal was to write some code that would allow a user to try to put an item into a virtual shopping cart.  The hitch was that the code had to make sure that the product was actually available.  If the product was being offered for sale, the code should return the price.  If the item was not available, the return value shoule be a string informing the customer of that fact.
 
 Here is (something like) the code that I found:
-
+```
 def check_for_product(desired_item)
 
    if item = @@products.find{|p| p.name == desired_item}
@@ -41,6 +43,8 @@ def check_for_product(desired_item)
 				"Item not found"
 
 end
+```
+
 
 What blew my mind about this was that the variable `item`  does not appear earlier in the code.  To me, it seemed as if the conditional could never evaluate to `true`,  but instead, the line would always throw an error as a result of referencinging an unassigned variable.
 
@@ -52,9 +56,11 @@ What I finally realized was actually happening, however, was that  the iteration
 
 
 I guess a longer way to write out the conditional would be:
-
+```
 if @@products.find{|p| p.name == desired_item}
   item=@@products.find{|p| p.name == desired_item}
+```
+
 	
 	To be fair, this only involves one extra line of code, but it does seem particularly ugly to have to repeat the whole iteration, especially if one is dealing with a store with a large number of products to go enumerate.
 	
