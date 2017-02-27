@@ -62,7 +62,7 @@ if @@products.find{|p| p.name == desired_item}
 ```
 
 
-
-	To be fair, this only involves one extra line of code, but it does seem particularly ugly to have to repeat the whole iteration, especially if one is dealing with a store with a large number of products to go enumerate.
 	
-	The point is, it turns out that, using an `if` statement, you can both check to see if a value exists and, if it does, assign it to a variable in one step, instead of having to check first and then making the assignment.
+To be fair, this only involves one extra line of code, but it does seem particularly ugly to have to repeat the whole iteration, especially if one were to be dealing with a store with a large number of products to enumerate through.
+
+The point is, it turns out that using an `if` statement, you can both check to see if a value exists and, if it does, assign it to a variable in one step, instead of having to check first and then making the assignment.
