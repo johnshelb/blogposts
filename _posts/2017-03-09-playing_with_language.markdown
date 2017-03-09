@@ -23,7 +23,7 @@ Again, if you've never seen a cryptic before, you might have no idea what to do 
 	 
    -chaperone shredded
 	 
-	 -shredded corset or
+	 -shredded corset
 	 
 	 -corset
  
