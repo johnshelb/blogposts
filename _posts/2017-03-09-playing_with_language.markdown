@@ -10,7 +10,7 @@ I have always loved language.  From childhood  I have been a voracious reader an
 
 If you have seen  cryptic crosswords, sometimes called British-style crosswords, without knowing how they work, you were probably very confused.  This is because the clues in a cryptic are, well, cryptic.  Each clue in a cryptic is a miniature word puzzle.  A bit of experience helps a lot, as there are certain patterns that cryptic clues often fall into.
 
-![](https://en.wikipedia.org/wiki/File:British_crossword.svg)
+![](http://en.wikipedia.org/wiki/File:British_crossword.svg)
 
 
 
@@ -93,7 +93,7 @@ According to hearsay, big star is not working (4) IDLE (sounds like idol)
 
 Features of a lion articulated in part of a sentence (4, 6) MAIN CLAUSE (sounds like mane and claws)
 
-Beef and fish (4) CARP
+Beef and fish (4) CARP (double definition)
 
 
 The examples used in this post culled from the Cryptic Crossword by Emily Cox and Henry Rathvon from the New York Times of Sunday, February 26, 2017.
