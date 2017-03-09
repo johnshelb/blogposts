@@ -19,14 +19,13 @@ Chaperone shredded corset (6)
 
 Again, if you've never seen a cryptic before, you might have no idea what to do with this.  But the experienced solver will start by trying to figure out where the straight definition is and where the wordplay lies.  In a short clue like this, there are only a few possibilities:  the straight definition must be either:
 
-   `-chaperone
+   -chaperone
 	 
    -chaperone shredded
 	 
-	 -shredded corse
+	 -shredded corset
 	 
-	 -corset`
-	 
+	 -corset 
 
  With some practice, it becomes clear that 'shredded' might not be part of the definition, but is indeed, an indicator of the wordplay.  Following that up with fact that we know the answer has 6 letters, and noticing that one of the words in the clue (corset) also has 6 letters, it becomes clear that what the clue is asking us to do is to find a word that is defined by 'chaperone' that can be formed by 'shredding' the 6-letter word, 'corset.'  Any term such as 'crazy,' 'drunk,' 'reeling,' 'weird,' etc. may indicate that there is an anagram at work.  I case you don't remember, an anagram is a word that can be formed by rearranging the letters of another word.  For example, 'tore' and 'rote' are anagrams of each other.  Anagrams are one very common type of cryptic clue.  So, can you shred 'corset' into a word that could mean chaperone?  (Answers will come at the end.)
  
