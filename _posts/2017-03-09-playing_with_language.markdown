@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Playing with Language"
-date:   2017-03-09 12:59:17 +0000
+date:   2017-03-09 07:59:18 -0500
 ---
 
 
@@ -10,7 +10,8 @@ I have always loved language.  From childhood  I have been a voracious reader an
 
 If you have seen  cryptic crosswords, sometimes called British-style crosswords, without knowing how they work, you were probably very confused.  This is because the clues in a cryptic are, well, cryptic.  Each clue in a cryptic is a miniature word puzzle.  A bit of experience helps a lot, as there are certain patterns that cryptic clues often fall into.
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/British_crossword.svg/330px-British_crossword.svg.pnghttp://)
+![](https://en.wikipedia.org/wiki/File:British_crossword.svg)
+
 
 
 Every cryptic clue can be read at least two different ways.  Each clue contains a straightforward, crossword-style definition as well as some kind of word play.  There often will also be an indicator as to what the word play is.  The trouble is that it is not always immediately clear where the division between the two parts of the clue is.  To help a bit, the number of letters in the answer is given in parentheses after the clue.  Punctuation, if present, is more likely to be misleading than helpful, so it is best to ignore it.
