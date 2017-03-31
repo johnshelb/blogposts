@@ -1,155 +1,39 @@
 ---
 layout: post
-title:  ".forEach() forBeginners"
+title:  "Handlebars for Beginners"
 date:   2017-03-11 22:17:16 -0500
 ---
 
-In starting to tackle the learning of JavaScript, I have struggled with mastering the syntax, and with the vagueries of some of the documentation that I have consulted in trying to figure it out.  I think I have finally figured out how the Array.prototype.forEach property works and so I would like to try to explain it as clearly as possible, in the hope that a future struggling beginner will be able to come across this post and be able to grasp the concept with less pain than it cost me.
 
-Like the `.each` method in Ruby, `.forEach()` can be used to iterate over each member of an array.  Once you understand the syntax, and how the arguments are passed, I think you will find it a very useful property.
+I had a very difficult time last week when I was trying to get through the Handlebars template lessons on Learn.  The words just swam before me as I tried to read through the examples and I ended up skipping the lab.  I was then mightily displeased to find that several subsequent labs required the use of the template.  It was a bad week all around.  But somehow, over the weekend, I found some tutorials and it became much clearer.  In fact, it's really not that bad at all.  So, here's hoping that this blog post reaches someone who, like me, has struggled to find something that puts the use of Handlebars templates into a clear and easy-to-understand guide.
 
-I will try to illustrate the use of `.forEach()` with simple examples.  Let's start with a very simple array assigned to the variable `a`:
+The concept of a template is simple enough:  It allows the creation of dynamic html which can be reused in different places, substituting the dynamic variables into the rest of the text.  There are some procedural requirements for using Handlebars, but if you just follow the steps, the rest is pretty straightforward.  Here is what is needed:
+
+
+--download Handlebars from handlebarsjs.com.  Place the handlebars.js file in In the js folder of your project's directory.
+In your html file:
+--you'll need a place to render your template.  A div with an id attribute will do nicely.
+--include a reference to handlebars by adding the following tag to the body of your html file:  `<script src="js/handlebars.js</script>`
+--also in the body of your html file, create your handlbars template inside another script tag with the following attributes:  `<script id="templateId" type ="text/x-handlebars-template> your template goes here </script>`
+--your template can consist of whatever html you need.  For the parts that you want to be dynamic, simply choose a variable name and surround that variable with the trademark double curly brackets like this: {{variable}}
+In your main .js file, such as index.js file:
+--establish a variable and assign your template script to it (e.g. `var template = document.getElementById("templateId").innerHTML`
+--establish a variable to which will be assigned the function that compiles your your template (a good name for this is `compiled`):  
+`var compiled = Handlebars.compile(template)`  
+Now establish a variable that will hold the information that you want to be rendered in the template.  The information must be formatted into an object in which your Handlebars variables are the keys and the text you want those variables to be replaced with are the values. For example, var info = {name: "Bob", birthday:"1/2/1995"}
+Then, to place the templated html into the spot on the page where you want it to appear, use document.getElementById("idOfElementYouWantToHoldTheText").innerHTML = template(info)
+Now, if you want to put the name and birthday of a different person into another spot of your document, you can establish another object, such as var info2 = {name: "Betty", birthdate: "12/21/02"} and call document.getElementById("anotherDiv").innerHTML=template(info2).  
+
+Handlebars also comes with some nice built-in helpers, and also gives you the ability to build your own custom helpers.  One of the most useful helpers is an `each` method.  If your `var info ={teacher:[{name:"Steven"},{name:"Jess"},{name:"Niky"}"]`Within a template you can have something like this:
 ```
-a = [1, 2, 3, 4]
+<ul>
+{{#each teacher}}
+  <li> {{name}}</li>
+	{{/each}}
+</ul>
 ```
+This will iterate through an array established in the var info, producing a list item for each element of the array:
+Steven
+Jess
+Niky
 
-Point 1:
-`.forEach()` is called on array.  Using the dot notation, we can call forEach on our array like so:
-
-```
-a.forEach()
-```
-
-As written, however, this will throw an error, because `.forEach()` needs to be passed an argument between its parentheses.
-
-Point 2:
-The argument passed to `.forEach()` must be a function.  This will be the function that you want to act on each member of the array on which `.forEach()` is being called.  Let's start with a simple function that will simply log each element of the array:
-
-```
-a.forEach(function print(element){
-  console.log(element)
-	})
-```
-
-This will print out:
-```
-1
-2
-3
-4
-=>undefined
-```
-(Since there is no `return` value specified, the return value is given as undefined.)
-
-Note that the argument of the function `print` is `element`.  This represents the element of the array that is being extracted with each iteration.
-
-Point 3:
-Although here the function that is given to `.forEach()` is fully written out and named `print`, it may also be an anonymous function:
-```
-a.forEach(function(element){
-console.log(element)
-})
-```
-Point 4: 
-This function may also be written as an arrow function in several different formats:
-```
-a.forEach((element)=>{
-console.log(element)
-})
-```
-
-or, leaving out the curly brackets:
-
-```
-a.forEach((element)=>
-console.log(element)
-)
-```
-
-or, leaving out the parentheses around `element`, which is allowed when there is only one argument in the arrow function:
-
-```
-a.forEach(element=>
-console.log(element)
-)
-```
-
-Point 5:
-The real power of `.forEach()` comes when the function argument passed into it is a callback function.  And here is where I encountered real difficulty in comprehension.
-
-A callback function can be defined elsewhere in the code and then called back inside another function.  To keep our examples consistent, I will define my callback function like so:
-
-```
-cbk = function print(element){
-console.log(element)
-}
-```
-
-I can now call the function by passing in an argument to `cbk`, so that `cbk(27)` will print out:
-
-```
-27
-=>undefined
-```
-
-Now, I can call `.forEach()` on our array using `cbk`:
-
-```
-a.forEach(cbk)
-```
-
-This will, as expected give the output:
-
-```
-1
-2
-3
-4
-=>undefined
-```
-
-Notice that in our expression `a.forEach(cbk)`, we do not explicitly pass in an argument to cbk.  cbk, representing the function `print()` was previously defined as taking in one argument, which we called, for convenience, 'element'.  This is where most of my confusion lay, so I want to be as explicit as possible here.
-
-The secret magic of `.forEach()` is that is will automatically make up to three arguments available to the function being passed in.  Those arguments, in this order, are 1. the current element of the iteration, 2. the index of that element in the array, and 3. the entire array itself.
-
-Since `cbk` represents the `print` function, which was defined as taking one argument, `.forEach()` will automatically pass in one argument, the current element, to `cbk`.
-
-Now, for illustration, let's change the definition of `cbk` a little:
-
-```
-cbk = function print(e, i){
-console.log(e,i)
-}
-```
-
-Now, if we call `array.forEach(cbk)`, the output will be:
-```
-1 0
-2 1
-3 2
-4 3
-=>undefined
-```
-
-Printing out each element followed by its index.
-
-Let's change `cbk` one more time:
-
-```
-cbk = function print(e, i,a){
-console.log(e, i, a)
-}
-```
-
-Now, if we call `a.forEach(cbk)`, the output will be:
-
-```
-1 0 >[1, 2, 3, 4]
-2 1 >[1, 2, 3, 4]
-3 2 >[1, 2, 3, 4]
-4 3 >[1, 2, 3, 4]
-=>undefined
-```
-printing out the element, its index, and the entire array for each iteration.
-
-To be clear, the point that had me confused is that `.forEach()` will pass in as many of the arguments (element, index, array) *in that order* as the callback function requires.  If the callback only takes one argument, just the element will be passed in.  If the callback takes two arguments, the element and its index will be passed in, and if the callback takes three arguments, the element, its index, and the entire array will be passed in.
